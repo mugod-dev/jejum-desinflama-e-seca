@@ -326,6 +326,21 @@ footer p{max-width:720px;margin:0 auto}
 @media (max-width:560px){.dep-grid{grid-template-columns:1fr;max-width:340px}}
 /* desempenho: o navegador pula o desenho das seções fora da tela */
 .s-pain,.s-prod,.s-tf,.s-time,.s-faq,.cta-final{content-visibility:auto;contain-intrinsic-size:auto 900px}
+/* nada passa da largura da tela (a faixa inclinada sobrava 10px) */
+html,body{overflow-x:hidden}
+@supports (overflow-x:clip){html,body{overflow-x:clip}}
+/* carrossel de módulos */
+.s-mods{padding:80px 0 64px;background:var(--t-deep);overflow:hidden}
+.s-mods .wrap{padding-inline:var(--gutter)}
+.mc-scroll{margin-top:36px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;cursor:grab;-webkit-overflow-scrolling:touch;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.mc-scroll::-webkit-scrollbar{display:none}
+.mc-scroll.drag{cursor:grabbing}
+.mc-track{display:flex;gap:18px;width:max-content;padding:18px 24px}
+.mc{margin:0;flex:none;width:clamp(170px,21vw,236px);aspect-ratio:275/412;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.45);transition:transform .35s var(--ease-spring),box-shadow .35s;user-select:none;-webkit-user-select:none}
+.mc img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
+@media (hover:hover){.mc:hover{transform:translateY(-8px) scale(1.04);box-shadow:0 26px 60px rgba(0,0,0,.55),0 0 0 2px var(--sun)}}
+.mc-hint{text-align:center;color:var(--muted2);font-size:.78rem;margin-top:10px}
 /* responsivo */
 @media (max-width:900px){
   .pain-grid{grid-template-columns:repeat(2,1fr)}
@@ -406,67 +421,6 @@ footer p{max-width:720px;margin:0 auto}
     <span>Desembrulhe menos, descasque mais</span><span class="sep">✦</span><span>A fome vem e passa</span><span class="sep">✦</span><span>O sono também conta</span><span class="sep">✦</span><span>Seu corpo não é calculadora</span><span class="sep">✦</span><span>O sal não é o vilão</span><span class="sep">✦</span>
   </div>
 </div>
-
-<!-- PREÇO -->
-<div id="preco">
-  <div class="urgency">
-    <span>Preço de lançamento termina em</span>
-    <div class="cd" id="cd">
-      <div><b id="cdD">00</b><small>DIAS</small></div>
-      <div><b id="cdH">00</b><small>HORAS</small></div>
-      <div><b id="cdM">00</b><small>MIN</small></div>
-      <div><b id="cdS">00</b><small>SEG</small></div>
-    </div>
-  </div>
-  <section class="sec s-price">
-    <div class="wrap center">
-      <span class="pill-ok">Acesso imediato no seu e-mail</span>
-      <h2 class="h2">Aplique a minha metodologia hoje e <span class="hl">tenha resultado a partir de 7 dias</span></h2>
-    </div>
-    <div class="price-box">
-      <div class="price-in">
-        <span class="ribbon">+2 bônus</span>
-        <span class="hot">Conteúdo completo</span>
-        <h3>Jejum Desinflama e Seca</h3>
-        <p class="from">De <s>R$ 97,00</s> por apenas</p>
-        <div class="price"><span class="cur">R$</span><span class="num">47</span><span class="cents">,00</span></div>
-        <p class="inst">Pagamento único · Sem mensalidade</p>
-        <ul class="feat">
-          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>7 módulos com a rotina completa do Vitor</li>
-          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Os 2 pratos da última refeição: low carb e cetogênica</li>
-          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Protocolo ao amanhecer e lista do que pode e não pode</li>
-          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>A janela secreta, a preferida do Vitor</li>
-          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 1:</b> 20 tábuas ancestrais criadas por ele</span></li>
-          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 2:</b> planilha de treino Full Body para iniciantes</span></li>
-        </ul>
-        <a class="btn btn-full" href="https://pay.cakto.com.br/3cya9hu_1165191">Quero o conteúdo completo agora <span class="arr">→</span></a>
-        <div class="secure"><span>🔒 Pagamento seguro</span><span>Pix · Cartão</span><span>Leia no celular</span></div>
-      </div>
-    </div>
-
-    <div class="guar">
-      <div class="seal"><b>7</b><span>dias de<br>garantia</span></div>
-      <div>
-        <h4>Faça os 7 dias por minha conta</h4>
-        <p>Siga o método por uma semana. Se não fizer sentido pra você, peça o reembolso e você recebe 100% de volta. E eu já te adianto: nos primeiros três dias, muito do que muda na balança é água. A desinflamação vem antes, e você sente na roupa.</p>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- AUTOR -->
-<section class="sec s-auth">
-  <div class="auth">
-    <div class="ph"><img src="vitor-retrato.jpg" alt="Retrato de Vitor Show" width="700" height="938" loading="lazy" decoding="async" style="object-position:50% 20%"><span class="handle">@vitorshow1</span></div>
-    <div>
-      <span class="label">Quem está te ensinando</span>
-      <h3>Eu não comecei o jejum pra emagrecer</h3>
-      <p class="lead">Sou o <strong>Vitor Show</strong>. Comecei a fazer jejum atrás de clareza mental, foco e bem-estar. O resto veio junto. Hoje são mais de um ano de prática diária, <strong>mais de 200 mil seguidores</strong> acompanhando minha rotina em menos de um ano e <strong>mais de 10 mil pessoas</strong> nos meus grupos e mentorias.</p>
-      <p class="lead">Não sou médico nem nutricionista, e não vou fingir que sou. O que eu te entrego aqui é o que eu faço todos os dias, do jeito que eu faço, com os erros que eu já cometi pra você não precisar cometer.</p>
-      <div class="creds"><span>+1 ano de jejum diário</span><span>+200 mil seguidores</span><span>+10 mil nos grupos e mentorias</span></div>
-    </div>
-  </div>
-</section>
 
 <!-- DORES -->
 <section class="sec s-pain">
@@ -578,6 +532,87 @@ footer p{max-width:720px;margin:0 auto}
   </div>
 </section>
 
+<!-- CARROSSEL DE MÓDULOS -->
+<section class="s-mods" aria-label="Módulos do conteúdo">
+  <div class="wrap center">
+    <span class="label">Por dentro do conteúdo</span>
+    <h2 class="h2">Cada módulo é um passo a passo para <span class="hl">te explicar exatamente o que fazer</span></h2>
+  </div>
+  <div class="mc-scroll" id="mcScroll">
+    <div class="mc-track">
+      <figure class="mc"><img src="modulo-v2-0.jpg" alt="Boas-vindas" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="mc"><img src="modulo-v2-1.jpg" alt="Módulo 1: Última refeição para iniciar" width="276" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="mc"><img src="modulo-v2-2.jpg" alt="Módulo 2: Água e sal" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="mc"><img src="modulo-v2-3.jpg" alt="Módulo 3: O que pode e não pode" width="276" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="mc"><img src="modulo-v2-4.jpg" alt="Módulo 4: Suas refeições diárias" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="mc"><img src="modulo-v2-5.jpg" alt="Módulo 5: O segredo final" width="276" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="mc"><img src="modulo-v2-6.jpg" alt="O próximo nível" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+    </div>
+  </div>
+  <p class="mc-hint">Arraste para o lado para ver todos</p>
+</section>
+
+<!-- PREÇO -->
+<div id="preco">
+  <div class="urgency">
+    <span>Preço de lançamento termina em</span>
+    <div class="cd" id="cd">
+      <div><b id="cdD">00</b><small>DIAS</small></div>
+      <div><b id="cdH">00</b><small>HORAS</small></div>
+      <div><b id="cdM">00</b><small>MIN</small></div>
+      <div><b id="cdS">00</b><small>SEG</small></div>
+    </div>
+  </div>
+  <section class="sec s-price">
+    <div class="wrap center">
+      <span class="pill-ok">Acesso imediato no seu e-mail</span>
+      <h2 class="h2">Aplique a minha metodologia hoje e <span class="hl">tenha resultado a partir de 7 dias</span></h2>
+    </div>
+    <div class="price-box">
+      <div class="price-in">
+        <span class="ribbon">+2 bônus</span>
+        <span class="hot">Conteúdo completo</span>
+        <h3>Jejum Desinflama e Seca</h3>
+        <p class="from">De <s>R$ 97,00</s> por apenas</p>
+        <div class="price"><span class="cur">R$</span><span class="num">47</span><span class="cents">,00</span></div>
+        <p class="inst">Pagamento único · Sem mensalidade</p>
+        <ul class="feat">
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>7 módulos com a rotina completa do Vitor</li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Os 2 pratos da última refeição: low carb e cetogênica</li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Protocolo ao amanhecer e lista do que pode e não pode</li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>A janela secreta, a preferida do Vitor</li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 1:</b> 20 tábuas ancestrais criadas por ele</span></li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 2:</b> planilha de treino Full Body para iniciantes</span></li>
+        </ul>
+        <a class="btn btn-full" href="https://pay.cakto.com.br/3cya9hu_1165191">Quero o conteúdo completo agora <span class="arr">→</span></a>
+        <div class="secure"><span>🔒 Pagamento seguro</span><span>Pix · Cartão</span><span>Leia no celular</span></div>
+      </div>
+    </div>
+
+    <div class="guar">
+      <div class="seal"><b>7</b><span>dias de<br>garantia</span></div>
+      <div>
+        <h4>Faça os 7 dias por minha conta</h4>
+        <p>Siga o método por uma semana. Se não fizer sentido pra você, peça o reembolso e você recebe 100% de volta. E eu já te adianto: nos primeiros três dias, muito do que muda na balança é água. A desinflamação vem antes, e você sente na roupa.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- AUTOR -->
+<section class="sec s-auth">
+  <div class="auth">
+    <div class="ph"><img src="vitor-retrato.jpg" alt="Retrato de Vitor Show" width="700" height="938" loading="lazy" decoding="async" style="object-position:50% 20%"><span class="handle">@vitorshow1</span></div>
+    <div>
+      <span class="label">Quem está te ensinando</span>
+      <h3>Eu não comecei o jejum pra emagrecer</h3>
+      <p class="lead">Sou o <strong>Vitor Show</strong>. Comecei a fazer jejum atrás de clareza mental, foco e bem-estar. O resto veio junto. Hoje são mais de um ano de prática diária, <strong>mais de 200 mil seguidores</strong> acompanhando minha rotina em menos de um ano e <strong>mais de 10 mil pessoas</strong> nos meus grupos e mentorias.</p>
+      <p class="lead">Não sou médico nem nutricionista, e não vou fingir que sou. O que eu te entrego aqui é o que eu faço todos os dias, do jeito que eu faço, com os erros que eu já cometi pra você não precisar cometer.</p>
+      <div class="creds"><span>+1 ano de jejum diário</span><span>+200 mil seguidores</span><span>+10 mil nos grupos e mentorias</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="sec s-faq">
   <div class="wrap center">
@@ -684,6 +719,38 @@ footer p{max-width:720px;margin:0 auto}
     el('cdS').textContent = pad(s % 60);
   }
   tick(); setInterval(tick, 1000);
+
+  // carrossel de módulos: passa sozinho, pausa no toque/mouse e pode ser arrastado
+  (() => {
+    const sc = document.getElementById('mcScroll');
+    if (!sc) return;
+    const track = sc.firstElementChild;
+    [...track.children].forEach(c => { const d = c.cloneNode(true); d.setAttribute('aria-hidden', 'true'); d.querySelector('img').alt = ''; track.appendChild(d); });
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let pos = 0, last = performance.now(), hold = false, onScreen = true, resumeAt = 0;
+    const half = () => track.scrollWidth / 2;
+    const pause = (ms) => { resumeAt = performance.now() + ms; };
+    function step(t) {
+      const dt = Math.min(t - last, 50); last = t;
+      if (hold || t < resumeAt || !onScreen || reduce) { pos = sc.scrollLeft; }
+      else { pos += dt * 0.045; }
+      const h = half();
+      if (h > 0) { if (pos >= h) pos -= h; else if (pos < 0) pos += h; }
+      if (!hold && Math.abs(sc.scrollLeft - pos) > 0.5) sc.scrollLeft = pos;
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+    new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; }).observe(sc);
+    sc.addEventListener('mouseenter', () => { hold = true; });
+    sc.addEventListener('mouseleave', () => { hold = false; dragging = false; sc.classList.remove('drag'); pause(400); });
+    sc.addEventListener('touchstart', () => { hold = true; }, { passive: true });
+    sc.addEventListener('touchend', () => { hold = false; pause(2500); }, { passive: true });
+    sc.addEventListener('wheel', () => pause(2500), { passive: true });
+    let dragging = false, startX = 0, startLeft = 0;
+    sc.addEventListener('mousedown', e => { dragging = true; startX = e.clientX; startLeft = sc.scrollLeft; sc.classList.add('drag'); e.preventDefault(); });
+    addEventListener('mousemove', e => { if (dragging) sc.scrollLeft = startLeft - (e.clientX - startX); });
+    addEventListener('mouseup', () => { if (dragging) { dragging = false; sc.classList.remove('drag'); pause(1500); } });
+  })();
 
   // FAQ
   document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => {
