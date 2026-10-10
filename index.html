@@ -330,7 +330,8 @@ footer p{max-width:720px;margin:0 auto}
 html,body{overflow-x:hidden}
 @supports (overflow-x:clip){html,body{overflow-x:clip}}
 /* carrossel de módulos */
-.s-mods{padding:80px 0 64px;background:var(--t-deep);overflow:hidden}
+.s-mods{padding:8px 0 80px;background:var(--t-plum);overflow:hidden}
+.s-prod{padding-bottom:56px}
 .s-mods .wrap{padding-inline:var(--gutter)}
 .mc-scroll{margin-top:36px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;cursor:grab;-webkit-overflow-scrolling:touch;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
@@ -472,6 +473,26 @@ html,body{overflow-x:hidden}
   </div>
 </section>
 
+<!-- CARROSSEL DE MÓDULOS -->
+<section class="s-mods" aria-label="Módulos do conteúdo">
+  <div class="wrap center">
+    <span class="label">Por dentro do conteúdo</span>
+    <h2 class="h2">Cada módulo é um passo a passo para <span class="hl">te explicar exatamente o que fazer</span></h2>
+  </div>
+  <div class="mc-scroll" id="mcScroll">
+    <div class="mc-track">
+      <figure class="mc"><img src="modulo-v2-0.jpg" alt="Boas-vindas" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="mc"><img src="modulo-v2-1.jpg" alt="Módulo 1: Última refeição para iniciar" width="276" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="mc"><img src="modulo-v2-2.jpg" alt="Módulo 2: Água e sal" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="mc"><img src="modulo-v2-3.jpg" alt="Módulo 3: O que pode e não pode" width="276" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="mc"><img src="modulo-v2-4.jpg" alt="Módulo 4: Suas refeições diárias" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="mc"><img src="modulo-v2-5.jpg" alt="Módulo 5: O segredo final" width="276" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="mc"><img src="modulo-v2-6.jpg" alt="O próximo nível" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+    </div>
+  </div>
+  <p class="mc-hint">Arraste para o lado para ver todos</p>
+</section>
+
 <!-- SEM x COM -->
 <section class="sec s-tf">
   <div class="wrap center">
@@ -530,26 +551,6 @@ html,body{overflow-x:hidden}
     <div class="phase-list" id="phList"></div>
     <p class="note">Faixas aproximadas; o ritmo varia de pessoa para pessoa. Dica do Vitor: quando a fome bater, olhe a hora. Na maioria das vezes ela não dura nem dez minutos.</p>
   </div>
-</section>
-
-<!-- CARROSSEL DE MÓDULOS -->
-<section class="s-mods" aria-label="Módulos do conteúdo">
-  <div class="wrap center">
-    <span class="label">Por dentro do conteúdo</span>
-    <h2 class="h2">Cada módulo é um passo a passo para <span class="hl">te explicar exatamente o que fazer</span></h2>
-  </div>
-  <div class="mc-scroll" id="mcScroll">
-    <div class="mc-track">
-      <figure class="mc"><img src="modulo-v2-0.jpg" alt="Boas-vindas" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
-      <figure class="mc"><img src="modulo-v2-1.jpg" alt="Módulo 1: Última refeição para iniciar" width="276" height="412" loading="lazy" decoding="async" draggable="false"></figure>
-      <figure class="mc"><img src="modulo-v2-2.jpg" alt="Módulo 2: Água e sal" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
-      <figure class="mc"><img src="modulo-v2-3.jpg" alt="Módulo 3: O que pode e não pode" width="276" height="412" loading="lazy" decoding="async" draggable="false"></figure>
-      <figure class="mc"><img src="modulo-v2-4.jpg" alt="Módulo 4: Suas refeições diárias" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
-      <figure class="mc"><img src="modulo-v2-5.jpg" alt="Módulo 5: O segredo final" width="276" height="412" loading="lazy" decoding="async" draggable="false"></figure>
-      <figure class="mc"><img src="modulo-v2-6.jpg" alt="O próximo nível" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
-    </div>
-  </div>
-  <p class="mc-hint">Arraste para o lado para ver todos</p>
 </section>
 
 <!-- PREÇO -->
