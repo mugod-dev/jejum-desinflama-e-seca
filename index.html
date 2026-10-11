@@ -6,7 +6,10 @@
 <meta name="description" content="Você não está gordo. Você está inflamado. O passo a passo de jejum do Vitor Show, em 7 módulos.">
 <meta property="og:title" content="Jejum Desinflama e Seca · Vitor Show">
 <meta property="og:description" content="Em 7 dias de jejum do jeito certo, você sente no espelho e na calça o que a balança ainda nem mostrou.">
-<meta property="og:image" content="vitor-show.jpg">
+<meta property="og:image" content="https://vitorshowreset.com.br/vitor-show.jpg">
+<meta property="og:url" content="https://vitorshowreset.com.br/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://vitorshowreset.com.br/">
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <!-- Meta Pixel Code -->
 <script>
@@ -364,6 +367,16 @@ html,body{overflow-x:hidden}
 .mc img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
 @media (hover:hover){.mc:hover{transform:translateY(-8px) scale(1.04);box-shadow:0 26px 60px rgba(0,0,0,.55),0 0 0 2px var(--sun)}}
 .mc-hint{text-align:center;color:var(--muted2);font-size:.78rem;margin-top:10px}
+/* VSL: começa sozinha sem som; um toque liga o som e volta pro início */
+.vsl-som{position:absolute;inset:auto 0 0 0;top:0;display:grid;place-content:center;justify-items:center;gap:6px;border:0;padding:20px;cursor:pointer;color:#FBFBF9;font-family:var(--f-body);
+  background:radial-gradient(60% 40% at 50% 50%,rgba(5,33,26,.55),rgba(5,33,26,.15) 70%,transparent)}
+.vsl-som .vsl-ico{width:84px;height:84px;border-radius:50%;background:var(--grad-sun);color:var(--on-bright);display:grid;place-items:center;box-shadow:0 0 0 0 rgba(221,191,125,.6);animation:somPulse 1.6s ease-out infinite}
+.vsl-som .vsl-ico svg{width:38px;height:38px}
+.vsl-som b{margin-top:10px;font-size:1rem;font-weight:800;letter-spacing:.5px;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.vsl-som span:last-child{font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sun);text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.vsl-som b,.vsl-som span:last-child{background:rgba(5,33,26,.85);padding:6px 14px;border-radius:999px}
+.vsl-som[hidden]{display:none}
+@keyframes somPulse{70%{box-shadow:0 0 0 22px rgba(221,191,125,0)}100%{box-shadow:0 0 0 0 rgba(221,191,125,0)}}
 /* responsivo */
 @media (max-width:900px){
   .pain-grid{grid-template-columns:repeat(2,1fr)}
@@ -410,7 +423,12 @@ html,body{overflow-x:hidden}
         <span class="l3">E a culpa não é sua.</span>
       </h1>
       <div class="hero-video">
-        <video src="vsl.mp4" poster="vsl-capa.jpg" controls playsinline preload="none" width="540" height="960"></video>
+        <video id="vsl" src="vsl.mp4" poster="vsl-capa.jpg" autoplay muted playsinline preload="auto" width="540" height="960"></video>
+        <button type="button" class="vsl-som" id="vslSom" aria-label="Ativar o som do vídeo">
+          <span class="vsl-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <b>Seu vídeo já começou</b>
+          <span>Toque aqui para ouvir</span>
+        </button>
       </div>
       <p class="hero-sub">Ninguém te contou que <strong>comer 5 vezes por dia mantém seu corpo inflamado.</strong> Em 7 dias de jejum do jeito certo, você vai sentir <strong>no espelho e na calça</strong> o que a balança ainda nem mostrou.</p>
       <div class="ba-grid">
@@ -773,6 +791,30 @@ html,body{overflow-x:hidden}
     sc.addEventListener('mousedown', e => { dragging = true; startX = e.clientX; startLeft = sc.scrollLeft; sc.classList.add('drag'); e.preventDefault(); });
     addEventListener('mousemove', e => { if (dragging) sc.scrollLeft = startLeft - (e.clientX - startX); });
     addEventListener('mouseup', () => { if (dragging) { dragging = false; sc.classList.remove('drag'); pause(1500); } });
+  })();
+
+  // VSL: autoplay sem som (regra dos navegadores) + toque para ouvir desde o início
+  (() => {
+    const v = document.getElementById('vsl'), b = document.getElementById('vslSom');
+    if (!v || !b) return;
+    v.muted = true;
+    const tentar = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+    tentar();
+    let comSom = false;
+    b.addEventListener('click', () => {
+      comSom = true;
+      v.muted = false;
+      v.currentTime = 0;
+      v.controls = true;
+      tentar();
+      b.hidden = true;
+      if (window.fbq) fbq('trackCustom', 'VSLSomAtivado');
+    });
+    // enquanto está sem som, só roda quando está na tela (economiza dados)
+    new IntersectionObserver(([e]) => {
+      if (comSom) return;
+      if (e.isIntersecting) tentar(); else v.pause();
+    }, { threshold: .25 }).observe(v);
   })();
 
   // FAQ
