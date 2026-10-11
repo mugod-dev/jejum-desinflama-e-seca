@@ -8,6 +8,28 @@
 <meta property="og:description" content="Em 7 dias de jejum do jeito certo, você sente no espelho e na calça o que a balança ainda nem mostrou.">
 <meta property="og:image" content="vitor-show.jpg">
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '26896974109896661');
+fbq('track', 'PageView');
+// clique em qualquer botão que leva ao checkout da Cakto = InitiateCheckout
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href*="pay.cakto.com.br"]');
+  if (a && window.fbq) fbq('track', 'InitiateCheckout', { value: 47.00, currency: 'BRL' });
+});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=26896974109896661&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <title>Jejum Desinflama e Seca</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
