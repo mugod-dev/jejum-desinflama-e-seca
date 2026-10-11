@@ -377,6 +377,16 @@ html,body{overflow-x:hidden}
 .vsl-som b,.vsl-som span:last-child{background:rgba(5,33,26,.85);padding:6px 14px;border-radius:999px}
 .vsl-som[hidden]{display:none}
 @keyframes somPulse{70%{box-shadow:0 0 0 22px rgba(221,191,125,0)}100%{box-shadow:0 0 0 0 rgba(221,191,125,0)}}
+/* foto do Vitor + card do Instagram sobreposto */
+.auth-media{position:relative;width:560px;max-width:100%;padding-bottom:70px}
+.ig-card{position:absolute;left:96px;top:72%;width:min(440px,calc(100% - 96px));margin:0;padding:6px;border-radius:22px;background:var(--grad-sun);transform:rotate(2deg);box-shadow:0 26px 60px rgba(0,0,0,.45);transition:transform .45s var(--ease-spring)}
+.ig-card img{display:block;width:100%;height:auto;border-radius:16px}
+@media (hover:hover){.ig-card:hover{transform:rotate(0) scale(1.03)}}
+@media (max-width:768px){
+  .auth-media{padding-bottom:clamp(80px,24vw,120px)}
+  .auth-media .ph{margin-inline:auto}
+  .ig-card{left:50%;top:auto;bottom:0;width:min(420px,100%);transform:translateX(-50%) rotate(2deg)}
+}
 /* responsivo */
 @media (max-width:900px){
   .pain-grid{grid-template-columns:repeat(2,1fr)}
@@ -643,7 +653,10 @@ html,body{overflow-x:hidden}
 <!-- AUTOR -->
 <section class="sec s-auth">
   <div class="auth">
-    <div class="ph"><img src="vitor-retrato.jpg" alt="Retrato de Vitor Show" width="700" height="938" loading="lazy" decoding="async" style="object-position:50% 20%"><span class="handle">@vitorshow1</span></div>
+    <div class="auth-media">
+      <div class="ph"><img src="vitor-retrato.jpg" alt="Retrato de Vitor Show" width="700" height="938" loading="lazy" decoding="async" style="object-position:50% 20%"></div>
+      <figure class="ig-card"><img src="instagram-vitor.jpg" alt="Perfil do Vitor Show no Instagram: @vitorshow1, verificado, 202 mil seguidores" width="667" height="251" loading="lazy" decoding="async"></figure>
+    </div>
     <div>
       <span class="label">Quem está te ensinando</span>
       <h3>Eu não comecei o jejum pra emagrecer</h3>
