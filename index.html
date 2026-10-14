@@ -387,6 +387,12 @@ html,body{overflow-x:hidden}
   .auth-media .ph{margin-inline:auto}
   .ig-card{left:50%;top:auto;bottom:0;width:min(420px,100%);transform:translateX(-50%) rotate(2deg)}
 }
+.auth-cta{margin-top:30px}
+.auth{max-width:1180px}
+.auth-cta .btn{white-space:nowrap;font-size:.82rem;letter-spacing:1.5px;padding:19px 30px}
+@media (hover:hover){.auth-cta .btn:hover{letter-spacing:2px}}
+@media (max-width:1200px){.auth{grid-template-columns:minmax(0,1fr);gap:48px;justify-items:center;text-align:center}.auth .creds{justify-content:center}}
+@media (max-width:560px){.auth-cta .btn{white-space:normal}}
 /* responsivo */
 @media (max-width:900px){
   .pain-grid{grid-template-columns:repeat(2,1fr)}
@@ -396,7 +402,7 @@ html,body{overflow-x:hidden}
   .hero-video{margin-inline:auto}
   .sec{padding-block:72px}
   .hero{padding-top:56px}
-  .hero-grid,.prod-grid,.auth{grid-template-columns:1fr;gap:44px}
+  .hero-grid,.prod-grid,.auth{grid-template-columns:minmax(0,1fr);gap:44px}
   .tf{grid-template-columns:1fr}
   .vs{padding:14px 0}
   .vs::before{top:50%;bottom:auto;left:10%;right:10%;width:auto;height:2px;background:linear-gradient(90deg,var(--pink),var(--lime))}
@@ -663,6 +669,7 @@ html,body{overflow-x:hidden}
       <p class="lead">Sou o <strong>Vitor Show</strong>. Comecei a fazer jejum atrás de clareza mental, foco e bem-estar. O resto veio junto. Hoje são mais de um ano de prática diária, <strong>mais de 200 mil seguidores</strong> acompanhando minha rotina em menos de um ano e <strong>mais de 10 mil pessoas</strong> nos meus grupos e mentorias.</p>
       <p class="lead">Não sou médico nem nutricionista, e não vou fingir que sou. O que eu te entrego aqui é o que eu faço todos os dias, do jeito que eu faço, com os erros que eu já cometi pra você não precisar cometer.</p>
       <div class="creds"><span>+1 ano de jejum diário</span><span>+200 mil seguidores</span><span>+10 mil nos grupos e mentorias</span></div>
+      <div class="auth-cta"><a class="btn" href="https://pay.cakto.com.br/3cya9hu_1165191">Quero o conteúdo completo agora <span class="arr">→</span></a></div>
     </div>
   </div>
 </section>
