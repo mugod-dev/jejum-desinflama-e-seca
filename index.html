@@ -393,6 +393,8 @@ html,body{overflow-x:hidden}
 @media (hover:hover){.auth-cta .btn:hover{letter-spacing:2px}}
 @media (max-width:1200px){.auth{grid-template-columns:minmax(0,1fr);gap:48px;justify-items:center;text-align:center}.auth .creds{justify-content:center}}
 @media (max-width:560px){.auth-cta .btn{white-space:normal}}
+/* texto dos botões sempre centralizado, mesmo quando quebra em 2 linhas */
+.btn{text-align:center;text-wrap:balance}
 /* responsivo */
 @media (max-width:900px){
   .pain-grid{grid-template-columns:repeat(2,1fr)}
