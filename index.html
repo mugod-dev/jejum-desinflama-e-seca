@@ -350,7 +350,6 @@ footer p{max-width:720px;margin:0 auto}
 .dep video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:14px;background:#000}
 @media (max-width:560px){.dep-grid{grid-template-columns:1fr;max-width:340px}}
 /* desempenho: o navegador pula o desenho das seções fora da tela */
-.s-pain,.s-prod,.s-tf,.s-time,.s-faq,.cta-final{content-visibility:auto;contain-intrinsic-size:auto 900px}
 /* nada passa da largura da tela (a faixa inclinada sobrava 10px) */
 html,body{overflow-x:hidden}
 @supports (overflow-x:clip){html,body{overflow-x:clip}}
@@ -396,6 +395,7 @@ html,body{overflow-x:hidden}
 /* texto dos botões sempre centralizado, mesmo quando quebra em 2 linhas */
 .btn{text-align:center;text-wrap:balance}
 .hero-cta2{display:flex;justify-content:center;margin:-8px 0 44px}
+#oferta{scroll-margin-top:24px}
 /* responsivo */
 @media (max-width:900px){
   .pain-grid{grid-template-columns:repeat(2,1fr)}
@@ -450,7 +450,7 @@ html,body{overflow-x:hidden}
         </button>
       </div>
       <p class="hero-sub">Ninguém te contou que <strong>comer 5 vezes por dia mantém seu corpo inflamado.</strong> Em 7 dias de jejum do jeito certo, você vai sentir <strong>no espelho e na calça</strong> o que a balança ainda nem mostrou.</p>
-      <div class="hero-cta2"><a class="btn" href="https://pay.cakto.com.br/3cya9hu_1165191">Quero o conteúdo completo agora <span class="arr">→</span></a></div>
+      <div class="hero-cta2"><a class="btn" href="#oferta">Quero o conteúdo completo agora <span class="arr">→</span></a></div>
       <div class="ba-grid">
         <figure><img src="antes-depois-4.jpg" srcset="antes-depois-4-520.jpg 520w, antes-depois-4.jpg 820w" sizes="(max-width:600px) 92vw, 520px" decoding="async" alt="Antes e depois de um aluno de frente, com barriga menor e mais definição no depois" width="820" height="820" loading="lazy"></figure>
         <figure><img src="antes-depois-5.jpg" srcset="antes-depois-5-500.jpg 500w, antes-depois-5.jpg 920w" sizes="(max-width:860px) 52vw, 455px" decoding="async" alt="Antes e depois de um aluno de frente, com redução visível da barriga" width="920" height="733" loading="lazy"></figure>
@@ -462,7 +462,7 @@ html,body{overflow-x:hidden}
       </div>
       <p class="ba-note">Resultados individuais de alunos e mentorados, alcançados ao longo de meses de prática e, em alguns casos, com treino. Não representam o que acontece em 7 dias.</p>
       <div class="hero-cta">
-        <a class="btn" href="https://pay.cakto.com.br/3cya9hu_1165191">Quero garantir meu acesso <span class="arr">→</span></a>
+        <a class="btn" href="#oferta">Quero garantir meu acesso <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -582,7 +582,7 @@ html,body{overflow-x:hidden}
       </ul>
     </div>
   </div>
-  <div class="tf-cta"><a class="btn" href="https://pay.cakto.com.br/3cya9hu_1165191">Quero o conteúdo completo agora <span class="arr">→</span></a></div>
+  <div class="tf-cta"><a class="btn" href="#oferta">Quero o conteúdo completo agora <span class="arr">→</span></a></div>
 </section>
 
 <!-- LINHA DO TEMPO -->
@@ -629,7 +629,7 @@ html,body{overflow-x:hidden}
       <span class="pill-ok">Acesso imediato no seu e-mail</span>
       <h2 class="h2">Aplique a minha metodologia hoje e <span class="hl">tenha resultado a partir de 7 dias</span></h2>
     </div>
-    <div class="price-box">
+    <div class="price-box" id="oferta">
       <div class="price-in">
         <span class="ribbon">+2 bônus</span>
         <span class="hot">Conteúdo completo</span>
@@ -645,7 +645,7 @@ html,body{overflow-x:hidden}
           <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 1:</b> 20 tábuas ancestrais criadas por ele</span></li>
           <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 2:</b> planilha de treino Full Body para iniciantes</span></li>
         </ul>
-        <a class="btn btn-full" href="https://pay.cakto.com.br/3cya9hu_1165191">Quero o conteúdo completo agora <span class="arr">→</span></a>
+        <a class="btn btn-full" id="btnCheckout" href="https://pay.cakto.com.br/3cya9hu_1165191">Quero o conteúdo completo agora <span class="arr">→</span></a>
         <div class="secure"><span>🔒 Pagamento seguro</span><span>Pix · Cartão</span><span>Leia no celular</span></div>
       </div>
     </div>
@@ -673,7 +673,7 @@ html,body{overflow-x:hidden}
       <p class="lead">Sou o <strong>Vitor Show</strong>. Comecei a fazer jejum atrás de clareza mental, foco e bem-estar. O resto veio junto. Hoje são mais de um ano de prática diária, <strong>mais de 200 mil seguidores</strong> acompanhando minha rotina em menos de um ano e <strong>mais de 10 mil pessoas</strong> nos meus grupos e mentorias.</p>
       <p class="lead">Não sou médico nem nutricionista, e não vou fingir que sou. O que eu te entrego aqui é o que eu faço todos os dias, do jeito que eu faço, com os erros que eu já cometi pra você não precisar cometer.</p>
       <div class="creds"><span>+1 ano de jejum diário</span><span>+200 mil seguidores</span><span>+10 mil nos grupos e mentorias</span></div>
-      <div class="auth-cta"><a class="btn" href="https://pay.cakto.com.br/3cya9hu_1165191">Quero o conteúdo completo agora <span class="arr">→</span></a></div>
+      <div class="auth-cta"><a class="btn" href="#oferta">Quero o conteúdo completo agora <span class="arr">→</span></a></div>
     </div>
   </div>
 </section>
@@ -699,7 +699,7 @@ html,body{overflow-x:hidden}
 <section class="cta-final">
   <h2>Tire do papel.<br>Coloque na <span>prática.</span></h2>
   <p>Você já sabe o que não funciona. Hoje às 20h pode ser sua última refeição do jeito antigo.</p>
-  <a class="btn" href="#preco">Quero começar hoje <span class="arr">→</span></a>
+  <a class="btn" href="#oferta">Quero começar hoje <span class="arr">→</span></a>
 </section>
 
 <footer>
