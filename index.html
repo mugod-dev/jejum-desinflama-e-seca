@@ -355,7 +355,7 @@ html,body{overflow-x:hidden}
 @supports (overflow-x:clip){html,body{overflow-x:clip}}
 /* carrossel de módulos */
 .s-mods{padding:8px 0 80px;background:var(--t-plum);overflow:hidden}
-.s-prod{padding-bottom:56px}
+.hero .s-mods{background:transparent;width:100vw;margin:56px calc(50% - 50vw) 8px;padding:0}
 .s-mods .wrap{padding-inline:var(--gutter)}
 .mc-scroll{margin-top:36px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;cursor:grab;-webkit-overflow-scrolling:touch;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
@@ -461,6 +461,25 @@ html,body{overflow-x:hidden}
         <figure class="dep"><div class="dep-in"><video src="depoimento-2.mp4" poster="depoimento-2-capa.jpg" controls playsinline preload="none" width="576" height="1024"></video></div></figure>
       </div>
       <p class="ba-note">Resultados individuais de alunos e mentorados, alcançados ao longo de meses de prática e, em alguns casos, com treino. Não representam o que acontece em 7 dias.</p>
+      <!-- CARROSSEL DE MÓDULOS -->
+      <section class="s-mods" aria-label="Módulos do conteúdo">
+        <div class="wrap center">
+          <span class="label">Por dentro do conteúdo</span>
+          <h2 class="h2">Cada módulo é um passo a passo para <span class="hl">te explicar exatamente o que fazer</span></h2>
+        </div>
+        <div class="mc-scroll" id="mcScroll">
+          <div class="mc-track">
+            <figure class="mc"><img src="modulo-v2-0.jpg" alt="Boas-vindas" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+            <figure class="mc"><img src="modulo-v2-1.jpg" alt="Módulo 1: Última refeição para iniciar" width="276" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+            <figure class="mc"><img src="modulo-v2-2.jpg" alt="Módulo 2: Água e sal" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+            <figure class="mc"><img src="modulo-v2-3.jpg" alt="Módulo 3: O que pode e não pode" width="276" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+            <figure class="mc"><img src="modulo-v2-4.jpg" alt="Módulo 4: Suas refeições diárias" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+            <figure class="mc"><img src="modulo-v2-5.jpg" alt="Módulo 5: O segredo final" width="276" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+            <figure class="mc"><img src="modulo-v2-6.jpg" alt="O próximo nível" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
+          </div>
+        </div>
+        <p class="mc-hint">Arraste para o lado para ver todos</p>
+      </section>
       <div class="hero-cta">
         <a class="btn" href="#oferta">Quero garantir meu acesso <span class="arr">→</span></a>
       </div>
@@ -531,26 +550,6 @@ html,body{overflow-x:hidden}
       </div>
     </div>
   </div>
-</section>
-
-<!-- CARROSSEL DE MÓDULOS -->
-<section class="s-mods" aria-label="Módulos do conteúdo">
-  <div class="wrap center">
-    <span class="label">Por dentro do conteúdo</span>
-    <h2 class="h2">Cada módulo é um passo a passo para <span class="hl">te explicar exatamente o que fazer</span></h2>
-  </div>
-  <div class="mc-scroll" id="mcScroll">
-    <div class="mc-track">
-      <figure class="mc"><img src="modulo-v2-0.jpg" alt="Boas-vindas" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
-      <figure class="mc"><img src="modulo-v2-1.jpg" alt="Módulo 1: Última refeição para iniciar" width="276" height="412" loading="lazy" decoding="async" draggable="false"></figure>
-      <figure class="mc"><img src="modulo-v2-2.jpg" alt="Módulo 2: Água e sal" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
-      <figure class="mc"><img src="modulo-v2-3.jpg" alt="Módulo 3: O que pode e não pode" width="276" height="412" loading="lazy" decoding="async" draggable="false"></figure>
-      <figure class="mc"><img src="modulo-v2-4.jpg" alt="Módulo 4: Suas refeições diárias" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
-      <figure class="mc"><img src="modulo-v2-5.jpg" alt="Módulo 5: O segredo final" width="276" height="412" loading="lazy" decoding="async" draggable="false"></figure>
-      <figure class="mc"><img src="modulo-v2-6.jpg" alt="O próximo nível" width="275" height="412" loading="lazy" decoding="async" draggable="false"></figure>
-    </div>
-  </div>
-  <p class="mc-hint">Arraste para o lado para ver todos</p>
 </section>
 
 <!-- SEM x COM -->
@@ -693,13 +692,6 @@ html,body{overflow-x:hidden}
     <div class="faq-item"><button class="faq-q" aria-expanded="false">Quem não deve fazer? <i>+</i></button><div class="faq-a"><div><p>Gestantes, lactantes, menores de 18 anos, pessoas com histórico de transtorno alimentar, quem usa medicação para diabetes e quem tem pressão alta ou doença nos rins (por causa do sal) devem conversar com o médico antes. O Vitor não é profissional de saúde, e o e-book não substitui acompanhamento.</p></div></div></div>
     <div class="faq-item"><button class="faq-q" aria-expanded="false">Como eu recebo? <i>+</i></button><div class="faq-a"><div><p>Assim que o pagamento é aprovado, o PDF e os bônus chegam no seu e-mail. No Pix e no cartão, a liberação é na hora.</p></div></div></div>
   </div>
-</section>
-
-<!-- CTA FINAL -->
-<section class="cta-final">
-  <h2>Tire do papel.<br>Coloque na <span>prática.</span></h2>
-  <p>Você já sabe o que não funciona. Hoje às 20h pode ser sua última refeição do jeito antigo.</p>
-  <a class="btn" href="#oferta">Quero começar hoje <span class="arr">→</span></a>
 </section>
 
 <footer>
