@@ -590,34 +590,6 @@ html,body{overflow-x:hidden}
   <div class="tf-cta"><a class="btn" href="#oferta">Quero o conteúdo completo agora <span class="arr">→</span></a></div>
 </section>
 
-<!-- LINHA DO TEMPO -->
-<section class="sec s-time" id="relogio">
-  <div class="wrap center">
-    <span class="label">Olha no relógio</span>
-    <h2 class="h2">Você jantou às 20h. <span class="hl">O que seu corpo está fazendo agora?</span></h2>
-    <p class="lead">Coloque a hora da sua última refeição. O relógio mostra em que ponto da janela você está, e o que vem a seguir.</p>
-  </div>
-  <div class="time-card">
-    <div class="time-top">
-      <div>
-        <label for="lastMeal">Minha última refeição foi às</label>
-        <input type="time" id="lastMeal" value="20:00">
-      </div>
-      <div class="hours"><b id="hrs">0h</b><span>de relógio sem comer</span></div>
-    </div>
-    <div class="range-wrap">
-      <input type="range" id="hourRange" min="0" max="24" step="0.25" value="14" aria-label="Horas em jejum">
-    </div>
-    <div class="scale"><span>0h</span><span>4h</span><span>8h</span><span>12h</span><span>16h</span><span>20h</span><span>24h</span></div>
-    <div class="phase">
-      <div class="ph-n" id="phN">12h</div>
-      <div><h4 id="phT">—</h4><p id="phD">—</p></div>
-    </div>
-    <div class="phase-list" id="phList"></div>
-    <p class="note">Faixas aproximadas; o ritmo varia de pessoa para pessoa. Dica do Vitor: quando a fome bater, olhe a hora. Na maioria das vezes ela não dura nem dez minutos.</p>
-  </div>
-</section>
-
 <!-- PREÇO -->
 <div id="preco">
   <div class="urgency">
@@ -730,45 +702,6 @@ html,body{overflow-x:hidden}
   cards.forEach(c => c.addEventListener('click', () => {
     c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); upd();
   }));
-
-  // linha do tempo
-  const phases = [
-    { from: 0,  to: 4,  tag: '0–4h',  t: 'Digestão',              d: 'Seu corpo ainda está usando a energia do jantar. Por isso o prato das 20h importa tanto: proteína e gordura primeiro, carboidrato no mínimo.', c: '#F2783A' },
-    { from: 4,  to: 8,  tag: '4–8h',  t: 'A glicemia desce',      d: 'Com a pausa, a glicemia começa a cair e a insulina acompanha. Boa parte disso acontece enquanto você dorme.', c: '#EE8D3A' },
-    { from: 8,  to: 12, tag: '8–12h', t: 'Hora da água com sal',  d: 'Você acordou. Antes de qualquer coisa: 300 a 500 ml de água com meia colher de chá de sal integral. Café preto liberado.', c: '#E8A23A' },
-    { from: 12, to: 16, tag: '12–16h',t: 'Energia escondida',     d: 'Com a reserva do jantar mais baixa, o corpo passa a buscar outro combustível: aquela gordura que estava guardada.', c: '#DDBF7D' },
-    { from: 16, to: 18, tag: '16–18h',t: 'Janela 16:8 completa',  d: 'Você fechou 16 horas de relógio. Quebre o jejum começando pela proteína e pela gordura, não pelo carboidrato.', c: '#A8D65B' },
-    { from: 18, to: 24.01,tag: '18–24h',t: 'Território avançado', d: 'Isso já é próxima etapa. Primeiro domine 16 horas e duas refeições; o módulo 6 explica quando avançar.', c: '#8FD4B0' }
-  ];
-  const range = document.getElementById('hourRange'), hrs = document.getElementById('hrs');
-  const phN = document.getElementById('phN'), phT = document.getElementById('phT'), phD = document.getElementById('phD');
-  const list = document.getElementById('phList'), lastMeal = document.getElementById('lastMeal');
-  phases.forEach(p => {
-    const b = document.createElement('button'); b.type = 'button'; b.textContent = p.tag;
-    b.addEventListener('click', () => { range.value = p.from + (p.to - p.from) / 2; render(); });
-    list.appendChild(b);
-  });
-  function render() {
-    const v = +range.value;
-    const h = Math.floor(v), m = Math.round((v - h) * 60);
-    hrs.textContent = m ? `${h}h${String(m).padStart(2, '0')}` : `${h}h`;
-    const i = phases.findIndex(p => v >= p.from && v < p.to);
-    const p = phases[i];
-    phN.textContent = p.tag.split('–')[0] + 'h+'; phN.style.background = p.c;
-    phT.textContent = p.t; phD.textContent = p.d;
-    [...list.children].forEach((b, j) => b.classList.toggle('on', j === i));
-  }
-  function fromMeal() {
-    const [H, M] = (lastMeal.value || '20:00').split(':').map(Number);
-    const now = new Date(), last = new Date(now);
-    last.setHours(H, M, 0, 0);
-    if (last > now) last.setDate(last.getDate() - 1);
-    const diff = Math.min(24, (now - last) / 36e5);
-    range.value = Math.round(diff * 4) / 4; render();
-  }
-  range.addEventListener('input', render);
-  lastMeal.addEventListener('input', fromMeal);
-  fromMeal();
 
   // contagem regressiva (troque pela data real do fim da oferta)
   const OFFER_END = new Date('2026-10-12T23:59:59-03:00');
