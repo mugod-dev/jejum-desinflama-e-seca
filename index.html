@@ -26,7 +26,7 @@ fbq('track', 'PageView');
 // clique em qualquer botão que leva ao checkout da Cakto = InitiateCheckout
 document.addEventListener('click', function (e) {
   var a = e.target.closest && e.target.closest('a[href*="pay.cakto.com.br"]');
-  if (a && window.fbq && !a.hasAttribute('data-popup')) fbq('track', 'InitiateCheckout', { value: parseFloat(a.getAttribute('data-valor') || '47.90'), currency: 'BRL' });
+  if (a && window.fbq && !a.hasAttribute('data-popup')) fbq('track', 'InitiateCheckout', { value: parseFloat(a.getAttribute('data-valor') || '47.00'), currency: 'BRL' });
 });
 </script>
 <noscript><img height="1" width="1" style="display:none"
@@ -662,7 +662,7 @@ html,body{overflow-x:hidden}
     <div class="wrap center">
       <span class="pill-ok">Acesso imediato no seu e-mail</span>
       <h2 class="h2">Aplique a minha metodologia hoje e <span class="hl">tenha resultado a partir de 7 dias</span></h2>
-      <p class="lead">Por apenas <strong>R$ 20 a mais</strong>, leve o conteúdo completo e os 2 bônus.</p>
+      <p class="lead">Por menos de <strong>R$ 20 a mais</strong>, leve o conteúdo completo e os 2 bônus.</p>
     </div>
     <div class="planos" id="oferta">
       <div class="plano plano-basico">
@@ -686,8 +686,8 @@ html,body{overflow-x:hidden}
         <h3>Pacote Premium</h3>
         <p class="p-tag">O método completo + 2 bônus</p>
         <p class="from">De <s>R$ 97,00</s> por apenas</p>
-        <div class="p-price"><span class="cur">R$</span><span class="num">47</span><span class="cents">,90</span></div>
-        <p class="inst">Pagamento único · <b class="p-save">Você economiza R$ 49,10</b></p>
+        <div class="p-price"><span class="cur">R$</span><span class="num">47</span><span class="cents">,00</span></div>
+        <p class="inst">Pagamento único · <b class="p-save">Você economiza R$ 50,00</b></p>
         <ul class="feat">
           <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>7 módulos</b> com a rotina completa do Vitor</span></li>
           <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Os <b>2 pratos da última refeição</b>: low carb e cetogênica</span></li>
@@ -696,7 +696,7 @@ html,body{overflow-x:hidden}
           <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 1: Suas refeições diárias.</b> <em>O que colocar no prato, na ordem certa.</em></span></li>
           <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 2: O segredo final.</b> <em>A janela que faz o corpo usar a gordura como energia.</em></span></li>
         </ul>
-        <a class="btn btn-full" id="btnCheckout" href="https://pay.cakto.com.br/3cya9hu_1165191" data-valor="47.90">Quero o método completo <span class="arr">→</span></a>
+        <a class="btn btn-full" id="btnCheckout" href="https://pay.cakto.com.br/3cya9hu_1165191" data-valor="47.00">Quero o método completo <span class="arr">→</span></a>
         <p class="p-trust">Acesso imediato · Garantia de 7 dias · Sai por menos de R$ 1 por semana no primeiro ano</p>
       </div>
     </div>
@@ -759,7 +759,7 @@ html,body{overflow-x:hidden}
     <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 2: O segredo final.</b> A janela que eu mais uso, que faz o corpo usar a gordura como energia.</span></li>
   </ul>
   <div class="up-box">
-    <p class="up-de">Premium completo de <s>R$ 47,90</s> por</p>
+    <p class="up-de">Premium completo de <s>R$ 47,00</s> por</p>
     <div class="up-preco"><b>R$ 37,00</b></div>
     <p class="up-dif">Só <b>R$ 9,10 a mais</b> que o Básico. Menos que um café.</p>
   </div>
