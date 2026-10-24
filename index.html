@@ -11,13 +11,6 @@
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://vitorshowreset.com.br/">
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<!-- VTurb: carregamento mais rápido do player -->
-<script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
-<link rel="preload" href="https://scripts.converteai.net/f5e39151-e921-4e14-8296-4285a62ac624/players/6ad0d185458fec18a662d3d9/v4/player.js" as="script">
-<link rel="dns-prefetch" href="https://scripts.converteai.net">
-<link rel="dns-prefetch" href="https://cdn.converteai.net">
-<link rel="dns-prefetch" href="https://images.converteai.net">
-<link rel="dns-prefetch" href="https://api.vturb.com.br">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -33,7 +26,7 @@ fbq('track', 'PageView');
 // clique em qualquer botão que leva ao checkout da Cakto = InitiateCheckout
 document.addEventListener('click', function (e) {
   var a = e.target.closest && e.target.closest('a[href*="pay.cakto.com.br"]');
-  if (a && window.fbq) fbq('track', 'InitiateCheckout', { value: parseFloat(a.getAttribute('data-valor') || '47.90'), currency: 'BRL' });
+  if (a && window.fbq && !a.hasAttribute('data-popup')) fbq('track', 'InitiateCheckout', { value: parseFloat(a.getAttribute('data-valor') || '47.90'), currency: 'BRL' });
 });
 </script>
 <noscript><img height="1" width="1" style="display:none"
@@ -373,10 +366,10 @@ html,body{overflow-x:hidden}
 .mc img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
 @media (hover:hover){.mc:hover{transform:translateY(-8px) scale(1.04);box-shadow:0 26px 60px rgba(0,0,0,.55),0 0 0 2px var(--sun)}}
 .mc-hint{text-align:center;color:var(--muted2);font-size:.78rem;margin-top:10px}
-/* player da VTurb ocupa o celular inteiro */
-.hero-video vturb-smartplayer{display:block;width:100%}
+/* VSL ocupa o celular inteiro */
+.hero-video video{display:block;width:100%;height:auto}
 .hero-video{aspect-ratio:auto}
-/* (estilos antigos do botão de som, sem uso) */
+/* VSL: começa sozinha sem som; um toque liga o som e volta pro início */
 .vsl-som{position:absolute;inset:auto 0 0 0;top:0;display:grid;place-content:center;justify-items:center;gap:6px;border:0;padding:20px;cursor:pointer;color:#FBFBF9;font-family:var(--f-body);
   background:radial-gradient(60% 40% at 50% 50%,rgba(5,33,26,.55),rgba(5,33,26,.15) 70%,transparent)}
 .vsl-som .vsl-ico{width:84px;height:84px;border-radius:50%;background:var(--grad-sun);color:var(--on-bright);display:grid;place-items:center;box-shadow:0 0 0 0 rgba(221,191,125,.6);animation:somPulse 1.6s ease-out infinite}
@@ -432,6 +425,40 @@ html,body{overflow-x:hidden}
 @media (hover:hover){.btn-ghost:hover{background:rgba(221,191,125,.1);box-shadow:none}}
 .planos-secure{margin-top:18px}
 @media (max-width:768px){.planos{grid-template-columns:minmax(0,1fr);gap:30px}.plano-premium{order:-1}}
+/* pop-up de upgrade do Básico para o Premium */
+.up{width:min(460px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;border:2px solid var(--sun);border-radius:26px;padding:38px 28px 26px;background:radial-gradient(circle at 50% 0%,rgba(221,191,125,.22),transparent 55%),var(--night2);color:var(--text);text-align:center;box-shadow:0 40px 120px rgba(0,0,0,.6)}
+.up::backdrop{background:rgba(3,20,15,.78);backdrop-filter:blur(4px)}
+.up[open]{animation:upIn .45s var(--ease-spring)}
+@keyframes upIn{from{opacity:0;transform:translateY(24px) scale(.94)}to{opacity:1;transform:none}}
+.up-x{position:absolute;top:12px;right:14px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line2);background:transparent;color:var(--muted);font-size:1.4rem;line-height:1;cursor:pointer}
+.up-tag{display:inline-block;padding:6px 14px;border-radius:999px;background:rgba(242,120,58,.16);color:var(--pink);font-size:.7rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+.up h3{font-size:clamp(1.7rem,6vw,2.2rem);line-height:1.02;margin:16px 0 10px}
+.up h3 .hl{background:var(--grad-sun);-webkit-background-clip:text;background-clip:text;color:transparent}
+.up-sub{color:var(--muted);font-size:.95rem}
+.up-lista{margin:16px 0;text-align:left}
+.up-preco{display:flex;justify-content:center;align-items:center;gap:12px;margin:4px 0 18px;font-variant-numeric:tabular-nums}
+.up-preco s{color:var(--muted2);font-size:1.2rem;font-weight:700}
+.up-obs{color:var(--muted2);font-size:.78rem;margin:-10px 0 16px}
+.up-lista li span{font-size:.9rem;line-height:1.45}
+.up-lista li b{color:var(--text)}
+.up-preco s{text-decoration-color:var(--pink);text-decoration-thickness:2px}
+.up-preco b{font-family:var(--f-display);font-weight:400;font-size:3rem;line-height:1;color:var(--sun)}
+.up-nao{display:inline-block;margin-top:14px;color:var(--muted2);font-size:.85rem;text-decoration:underline;text-underline-offset:3px}
+@media (hover:hover){.up-nao:hover{color:var(--text)}}
+/* oferta: detalhes extras */
+.p-tag{color:var(--muted);font-size:.9rem;margin:-2px 0 10px}
+.plano-premium .p-tag{color:var(--sun);font-weight:700}
+.p-save{color:var(--lime);font-weight:800}
+.plano .feat li em{display:block;font-style:normal;font-weight:500;color:var(--muted);font-size:.84rem;margin-top:2px}
+.p-trust{margin-top:12px;text-align:center;color:var(--muted2);font-size:.76rem;line-height:1.5}
+/* pop-up: caixa de preço */
+.up-box{margin:6px 0 18px;padding:16px;border-radius:18px;background:rgba(0,0,0,.22);border:1px dashed rgba(221,191,125,.45)}
+.up-de{color:var(--muted);font-size:.9rem}
+.up-de s{color:var(--muted2);text-decoration-color:var(--pink);text-decoration-thickness:2px;font-weight:700}
+.up-box .up-preco{margin:2px 0 4px}
+.up-dif{color:var(--muted);font-size:.86rem}
+.up-dif b{color:var(--lime)}
+.up .up-obs{margin:12px 0 0;line-height:1.5}
 /* responsivo */
 @media (max-width:900px){
   .pain-grid{grid-template-columns:repeat(2,1fr)}
@@ -478,8 +505,12 @@ html,body{overflow-x:hidden}
         <span class="l3">E a culpa não é sua.</span>
       </h1>
       <div class="hero-video">
-        <vturb-smartplayer id="vid-6ad0d185458fec18a662d3d9" style="display: block; margin: 0 auto; width: 100%;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
-        <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/f5e39151-e921-4e14-8296-4285a62ac624/players/6ad0d185458fec18a662d3d9/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+        <video id="vsl" src="vsl-aulas.mp4" poster="vsl-aulas-capa.jpg" autoplay muted playsinline preload="auto" width="540" height="960"></video>
+        <button type="button" class="vsl-som" id="vslSom" aria-label="Ativar o som do vídeo">
+          <span class="vsl-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <b>Seu vídeo já começou</b>
+          <span>Toque aqui para ouvir</span>
+        </button>
       </div>
       <p class="hero-sub">Ninguém te contou que <strong>comer 5 vezes por dia mantém seu corpo inflamado.</strong> Em 7 dias de jejum do jeito certo, você vai sentir <strong>no espelho e na calça</strong> o que a balança ainda nem mostrou.</p>
       <div class="hero-cta2"><a class="btn" href="#oferta">Quero o conteúdo completo agora <span class="arr">→</span></a></div>
@@ -636,33 +667,37 @@ html,body{overflow-x:hidden}
     <div class="planos" id="oferta">
       <div class="plano plano-basico">
         <h3>Pacote Básico</h3>
+        <p class="p-tag">Para conhecer o método</p>
         <div class="p-price"><span class="cur">R$</span><span class="num">27</span><span class="cents">,90</span></div>
-        <p class="inst">Pagamento único · Sem mensalidade</p>
+        <p class="inst">Pagamento único</p>
         <ul class="feat">
-          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>7 módulos com a rotina completa do Vitor</li>
-          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Os 2 pratos da última refeição: low carb e cetogênica</li>
-          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Protocolo ao amanhecer e lista do que pode e não pode</li>
-          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>A janela secreta, a preferida do Vitor</li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>7 módulos</b> com a rotina completa do Vitor</span></li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Os <b>2 pratos da última refeição</b>: low carb e cetogênica</span></li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Protocolo ao amanhecer</b> e lista do que pode e não pode</span></li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>A <b>janela secreta</b>, a preferida do Vitor</span></li>
           <li class="no"><span class="nx"><svg viewBox="0 0 16 16"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><b>Bônus 1:</b> Suas refeições diárias</span></li>
           <li class="no"><span class="nx"><svg viewBox="0 0 16 16"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><b>Bônus 2:</b> O segredo final</span></li>
         </ul>
-        <a class="btn btn-full btn-ghost" id="btnBasico" href="https://pay.cakto.com.br/e8p6h3s" data-valor="27.90">Quero o Pacote Básico</a>
+        <a class="btn btn-full btn-ghost" id="btnBasico" href="https://pay.cakto.com.br/e8p6h3s" data-valor="27.90" data-popup="upgrade">Quero só o Básico</a>
+        <p class="p-trust">Acesso imediato · Garantia de 7 dias</p>
       </div>
       <div class="plano plano-premium">
         <span class="p-badge">Recomendado</span>
         <h3>Pacote Premium</h3>
+        <p class="p-tag">O método completo + 2 bônus</p>
         <p class="from">De <s>R$ 97,00</s> por apenas</p>
         <div class="p-price"><span class="cur">R$</span><span class="num">47</span><span class="cents">,90</span></div>
-        <p class="inst">Pagamento único · Conteúdo completo + 2 bônus</p>
+        <p class="inst">Pagamento único · <b class="p-save">Você economiza R$ 49,10</b></p>
         <ul class="feat">
-          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>7 módulos com a rotina completa do Vitor</li>
-          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Os 2 pratos da última refeição: low carb e cetogênica</li>
-          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Protocolo ao amanhecer e lista do que pode e não pode</li>
-          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>A janela secreta, a preferida do Vitor</li>
-          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 1:</b> Suas refeições diárias</span></li>
-          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 2:</b> O segredo final</span></li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>7 módulos</b> com a rotina completa do Vitor</span></li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Os <b>2 pratos da última refeição</b>: low carb e cetogênica</span></li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Protocolo ao amanhecer</b> e lista do que pode e não pode</span></li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>A <b>janela secreta</b>, a preferida do Vitor</span></li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 1: Suas refeições diárias.</b> <em>O que colocar no prato, na ordem certa.</em></span></li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 2: O segredo final.</b> <em>A janela que faz o corpo usar a gordura como energia.</em></span></li>
         </ul>
-        <a class="btn btn-full" id="btnCheckout" href="https://pay.cakto.com.br/3cya9hu_1165191" data-valor="47.90">Quero o Pacote Premium <span class="arr">→</span></a>
+        <a class="btn btn-full" id="btnCheckout" href="https://pay.cakto.com.br/3cya9hu_1165191" data-valor="47.90">Quero o método completo <span class="arr">→</span></a>
+        <p class="p-trust">Acesso imediato · Garantia de 7 dias · Sai por menos de R$ 1 por semana no primeiro ano</p>
       </div>
     </div>
     <div class="secure planos-secure"><span>🔒 Pagamento seguro</span><span>Pix · Cartão</span><span>Leia no celular</span></div>
@@ -712,6 +747,27 @@ html,body{overflow-x:hidden}
   </div>
 </section>
 
+
+<!-- POP-UP DE UPGRADE (aparece ao clicar no Pacote Básico) -->
+<dialog class="up" id="upgrade" aria-labelledby="upTitulo">
+  <button type="button" class="up-x" id="upFechar" aria-label="Fechar">×</button>
+  <span class="up-tag">Só nesta tela</span>
+  <h3 id="upTitulo">Espera! Não leve o método <span class="hl">pela metade</span></h3>
+  <p class="up-sub">O Básico te ensina a começar o jejum. Os 2 bônus do Premium te mostram <strong>o que comer e qual janela usar para o resultado aparecer de verdade</strong>.</p>
+  <ul class="feat up-lista">
+    <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 1: Suas refeições diárias.</b> O prato certo, na ordem certa, sem contar caloria e sem passar fome.</span></li>
+    <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 2: O segredo final.</b> A janela que eu mais uso, que faz o corpo usar a gordura como energia.</span></li>
+  </ul>
+  <div class="up-box">
+    <p class="up-de">Premium completo de <s>R$ 47,90</s> por</p>
+    <div class="up-preco"><b>R$ 37,00</b></div>
+    <p class="up-dif">Só <b>R$ 9,10 a mais</b> que o Básico. Menos que um café.</p>
+  </div>
+  <a class="btn btn-full" id="btnUpgrade" href="https://pay.cakto.com.br/39n4w4g" data-valor="37.00">Sim! Quero o completo por R$ 37 <span class="arr">→</span></a>
+  <p class="up-obs">🔒 Pagamento único · Acesso imediato · Garantia de 7 dias: se não gostar, devolvemos 100%</p>
+  <a class="up-nao" href="https://pay.cakto.com.br/e8p6h3s" data-valor="27.90">Não, quero levar o método incompleto</a>
+</dialog>
+
 <footer>
   <div class="logo">VITOR<b>SHOW</b></div>
   <p>O e-book Jejum Desinflama e Seca tem caráter educativo e reflete a experiência pessoal do autor, que não é médico nem nutricionista. Não substitui consulta com profissional de saúde. Os resultados variam de pessoa para pessoa. Procure um médico antes de iniciar o jejum, principalmente se você tem alguma condição de saúde ou usa medicação.</p>
@@ -747,8 +803,10 @@ html,body{overflow-x:hidden}
   const OFFER_END = new Date('2026-10-12T23:59:59-03:00');
   const el = id => document.getElementById(id);
   const pad = n => String(n).padStart(2, '0');
+  const barra = document.querySelector('.urgency');
   function tick() {
     let s = Math.max(0, Math.floor((OFFER_END - Date.now()) / 1000));
+    if (s === 0 && barra) { barra.hidden = true; return; }
     el('cdD').textContent = pad(Math.floor(s / 86400)); s %= 86400;
     el('cdH').textContent = pad(Math.floor(s / 3600)); s %= 3600;
     el('cdM').textContent = pad(Math.floor(s / 60));
@@ -786,6 +844,42 @@ html,body{overflow-x:hidden}
     sc.addEventListener('mousedown', e => { dragging = true; startX = e.clientX; startLeft = sc.scrollLeft; sc.classList.add('drag'); e.preventDefault(); });
     addEventListener('mousemove', e => { if (dragging) sc.scrollLeft = startLeft - (e.clientX - startX); });
     addEventListener('mouseup', () => { if (dragging) { dragging = false; sc.classList.remove('drag'); pause(1500); } });
+  })();
+
+  // VSL: autoplay sem som (regra dos navegadores) + toque para ouvir desde o início
+  (() => {
+    const v = document.getElementById('vsl'), b = document.getElementById('vslSom');
+    if (!v || !b) return;
+    v.muted = true;
+    const tentar = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+    tentar();
+    let comSom = false;
+    b.addEventListener('click', () => {
+      comSom = true;
+      v.muted = false;
+      v.currentTime = 0;
+      v.controls = true;
+      tentar();
+      b.hidden = true;
+      if (window.fbq) fbq('trackCustom', 'VSLSomAtivado');
+    });
+    new IntersectionObserver(([e]) => {
+      if (comSom) return;
+      if (e.isIntersecting) tentar(); else v.pause();
+    }, { threshold: .25 }).observe(v);
+  })();
+
+  // pop-up de upgrade: clique no Básico abre a oferta do Premium antes do checkout
+  (() => {
+    const d = document.getElementById('upgrade'), btn = document.getElementById('btnBasico');
+    if (!d || !btn || !d.showModal) return;
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      d.showModal();
+      if (window.fbq) fbq('trackCustom', 'PopupUpgradeVisto');
+    });
+    document.getElementById('upFechar').addEventListener('click', () => d.close());
+    d.addEventListener('click', e => { if (e.target === d) d.close(); });
   })();
 
   // FAQ
