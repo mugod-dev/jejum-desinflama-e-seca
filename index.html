@@ -459,6 +459,17 @@ html,body{overflow-x:hidden}
 .up-dif{color:var(--muted);font-size:.86rem}
 .up-dif b{color:var(--lime)}
 .up .up-obs{margin:12px 0 0;line-height:1.5}
+/* pop-up mais compacto com a lista maior */
+.up{padding:30px 24px 20px}
+.up h3{margin:12px 0 8px;font-size:clamp(1.6rem,5.4vw,2rem)}
+.up-sub{font-size:.88rem;line-height:1.55}
+.up .up-lista{margin:12px 0;padding:12px 14px;gap:6px}
+.up .up-lista li{gap:9px;align-items:flex-start}
+.up .up-lista li span{font-size:.84rem;line-height:1.4}
+.up .up-lista .dot{width:18px;height:18px;margin-top:1px}
+.up .up-lista .dot svg{width:10px;height:10px}
+.up-box{padding:12px;margin:4px 0 14px}
+.up .up-preco b{font-size:2.6rem}
 /* responsivo */
 @media (max-width:900px){
   .pain-grid{grid-template-columns:repeat(2,1fr)}
@@ -597,7 +608,7 @@ html,body{overflow-x:hidden}
       <p class="lead">Não é teoria de livro. É a rotina que eu faço todo dia, escrita na ordem em que você deve aprender. Cada módulo responde uma pergunta que trava quem está começando.</p>
     </div>
     <div class="mock">
-      <div class="badge-round"><b>+2</b><span>bônus</span></div>
+      <div class="badge-round"><b>+7</b><span>bônus</span></div>
       <div class="phone">
         <div class="screen">
           <span class="s-top">Conteúdo completo</span>
@@ -662,7 +673,7 @@ html,body{overflow-x:hidden}
     <div class="wrap center">
       <span class="pill-ok">Acesso imediato no seu e-mail</span>
       <h2 class="h2">Aplique a minha metodologia hoje e <span class="hl">tenha resultado a partir de 7 dias</span></h2>
-      <p class="lead">Por menos de <strong>R$ 20 a mais</strong>, leve o conteúdo completo e os 2 bônus.</p>
+      <p class="lead">Por menos de <strong>R$ 20 a mais</strong>, leve o conteúdo completo e os 7 bônus.</p>
     </div>
     <div class="planos" id="oferta">
       <div class="plano plano-basico">
@@ -675,8 +686,14 @@ html,body{overflow-x:hidden}
           <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Os <b>2 pratos da última refeição</b>: low carb e cetogênica</span></li>
           <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Protocolo ao amanhecer</b> e lista do que pode e não pode</span></li>
           <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>A <b>janela secreta</b>, a preferida do Vitor</span></li>
+          <li class="no"><span class="nx"><svg viewBox="0 0 16 16"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><b>Acesso vitalício</b> ao conteúdo</span></li>
           <li class="no"><span class="nx"><svg viewBox="0 0 16 16"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><b>Bônus 1:</b> Suas refeições diárias</span></li>
           <li class="no"><span class="nx"><svg viewBox="0 0 16 16"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><b>Bônus 2:</b> O segredo final</span></li>
+          <li class="no"><span class="nx"><svg viewBox="0 0 16 16"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><b>Bônus 3:</b> 20 receitas doces ancestrais</span></li>
+          <li class="no"><span class="nx"><svg viewBox="0 0 16 16"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><b>Bônus 4:</b> Rastreador de 7 dias</span></li>
+          <li class="no"><span class="nx"><svg viewBox="0 0 16 16"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><b>Bônus 5:</b> Guia quebra ou não quebra o jejum?</span></li>
+          <li class="no"><span class="nx"><svg viewBox="0 0 16 16"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><b>Bônus 6:</b> Planilha de treino Full Body</span></li>
+          <li class="no"><span class="nx"><svg viewBox="0 0 16 16"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><b>Bônus 7:</b> 5 Shots matinais que não quebram o jejum</span></li>
         </ul>
         <a class="btn btn-full btn-ghost" id="btnBasico" href="https://pay.cakto.com.br/e8p6h3s" data-valor="27.90" data-popup="upgrade">Quero só o Básico</a>
         <p class="p-trust">Acesso imediato · Garantia de 7 dias</p>
@@ -684,7 +701,7 @@ html,body{overflow-x:hidden}
       <div class="plano plano-premium">
         <span class="p-badge">Recomendado</span>
         <h3>Pacote Premium</h3>
-        <p class="p-tag">O método completo + 2 bônus</p>
+        <p class="p-tag">O método completo + 7 bônus</p>
         <p class="from">De <s>R$ 97,00</s> por apenas</p>
         <div class="p-price"><span class="cur">R$</span><span class="num">47</span><span class="cents">,00</span></div>
         <p class="inst">Pagamento único · <b class="p-save">Você economiza R$ 50,00</b></p>
@@ -693,8 +710,14 @@ html,body{overflow-x:hidden}
           <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Os <b>2 pratos da última refeição</b>: low carb e cetogênica</span></li>
           <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Protocolo ao amanhecer</b> e lista do que pode e não pode</span></li>
           <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>A <b>janela secreta</b>, a preferida do Vitor</span></li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Acesso vitalício</b> ao conteúdo</span></li>
           <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 1: Suas refeições diárias.</b> <em>O que colocar no prato, na ordem certa.</em></span></li>
           <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 2: O segredo final.</b> <em>A janela que faz o corpo usar a gordura como energia.</em></span></li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 3:</b> 20 receitas doces ancestrais</span></li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 4:</b> Rastreador de 7 dias</span></li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 5:</b> Guia quebra ou não quebra o jejum?</span></li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 6:</b> Planilha de treino Full Body</span></li>
+          <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 7:</b> 5 Shots matinais que não quebram o jejum</span></li>
         </ul>
         <a class="btn btn-full" id="btnCheckout" href="https://pay.cakto.com.br/3cya9hu_1165191" data-valor="47.00">Quero o método completo <span class="arr">→</span></a>
         <p class="p-trust">Acesso imediato · Garantia de 7 dias · Sai por menos de R$ 1 por semana no primeiro ano</p>
@@ -753,17 +776,23 @@ html,body{overflow-x:hidden}
   <button type="button" class="up-x" id="upFechar" aria-label="Fechar">×</button>
   <span class="up-tag">Só nesta tela</span>
   <h3 id="upTitulo">Espera! Não leve o método <span class="hl">pela metade</span></h3>
-  <p class="up-sub">O Básico te ensina a começar o jejum. Os 2 bônus do Premium te mostram <strong>o que comer e qual janela usar para o resultado aparecer de verdade</strong>.</p>
+  <p class="up-sub">O Básico te ensina a começar o jejum. Os 7 bônus do Premium te mostram <strong>o que comer e qual janela usar para o resultado aparecer de verdade</strong>.</p>
   <ul class="feat up-lista">
-    <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 1: Suas refeições diárias.</b> O prato certo, na ordem certa, sem contar caloria e sem passar fome.</span></li>
-    <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 2: O segredo final.</b> A janela que eu mais uso, que faz o corpo usar a gordura como energia.</span></li>
+    <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 1:</b> Suas refeições diárias, sem contar caloria</span></li>
+    <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 2:</b> O segredo final, a janela que eu mais uso</span></li>
+    <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 3:</b> 20 receitas doces ancestrais</span></li>
+    <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 4:</b> Rastreador de 7 dias</span></li>
+    <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 5:</b> Guia quebra ou não quebra o jejum?</span></li>
+    <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 6:</b> Planilha de treino Full Body</span></li>
+    <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Bônus 7:</b> 5 Shots matinais que não quebram o jejum</span></li>
+    <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Acesso vitalício</b> ao conteúdo</span></li>
   </ul>
   <div class="up-box">
     <p class="up-de">Premium completo de <s>R$ 47,00</s> por</p>
-    <div class="up-preco"><b>R$ 37,00</b></div>
-    <p class="up-dif">Só <b>R$ 9,10 a mais</b> que o Básico. Menos que um café.</p>
+    <div class="up-preco"><b>R$ 34,00</b></div>
+    <p class="up-dif">Só <b>R$ 6,10 a mais</b> que o Básico. Menos que um café.</p>
   </div>
-  <a class="btn btn-full" id="btnUpgrade" href="https://pay.cakto.com.br/39n4w4g" data-valor="37.00">Sim! Quero o completo por R$ 37 <span class="arr">→</span></a>
+  <a class="btn btn-full" id="btnUpgrade" href="https://pay.cakto.com.br/39n4w4g" data-valor="34.00">Sim! Quero o completo por R$ 34 <span class="arr">→</span></a>
   <p class="up-obs">🔒 Pagamento único · Acesso imediato · Garantia de 7 dias: se não gostar, devolvemos 100%</p>
   <a class="up-nao" href="https://pay.cakto.com.br/e8p6h3s" data-valor="27.90">Não, quero levar o método incompleto</a>
 </dialog>
