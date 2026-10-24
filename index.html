@@ -11,6 +11,7 @@
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://vitorshowreset.com.br/">
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preload" as="image" href="vsl-leve-capa.jpg">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -87,7 +88,7 @@ p{margin:0}
   background:linear-gradient(120deg,#C4973F,#F5DFA6,#DDBF7D,#C4973F);background-size:300% 100%;box-shadow:var(--glow-btn);
   transition:transform .35s var(--ease-spring),box-shadow .35s,letter-spacing .35s}
 .btn .arr{transition:transform .35s var(--ease-spring)}
-.btn::before{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:sweep 3.4s ease-in-out infinite;will-change:transform}
+.btn::before{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);}
 @media (hover:hover){.btn:hover{transform:translateY(-4px) scale(1.03);box-shadow:var(--glow-btn-h);letter-spacing:3.5px}.btn:hover .arr{transform:translateX(6px)}}
 .btn:active{transform:scale(.97);transition-duration:.1s}
 .btn-full{width:100%}
@@ -101,7 +102,7 @@ p{margin:0}
 .hero-grid > *{min-width:0}
 .hero-grid{position:relative;z-index:2;max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
 .hero-pill{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;background:rgba(168,214,91,.12);border:1px solid rgba(168,214,91,.4);color:var(--lime);font-size:.72rem;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;animation:fu .7s .05s both}
-.hero-pill i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);animation:blink 1.4s infinite}
+.hero-pill i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime)}
 .hero h1{font-size:clamp(2.6rem,5.4vw,4.9rem);line-height:.95;margin:22px 0 0}
 .hero h1 .l2{display:block;background:var(--grad-sun);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 30px rgba(221,191,125,.45))}
 .hero h1 .l3{display:block;color:var(--lime)}
@@ -175,7 +176,7 @@ p{margin:0}
 .screen .s-card{background:rgba(255,255,255,.85);border-radius:16px;padding:12px 14px;font-size:.78rem;font-weight:700;display:flex;justify-content:space-between;align-items:center}
 .screen .s-card span{font-weight:600;opacity:.7}
 .screen .s-card.done{background:var(--on-bright);color:var(--lime)}
-.badge-round{position:absolute;top:-12px;left:0;width:118px;height:118px;border-radius:50%;background:var(--lime);color:var(--on-bright);display:grid;place-content:center;text-align:center;transform:rotate(-12deg);box-shadow:0 14px 40px rgba(168,214,91,.4);animation:spin 18s linear infinite}
+.badge-round{position:absolute;top:-12px;left:0;width:118px;height:118px;border-radius:50%;background:var(--lime);color:var(--on-bright);display:grid;place-content:center;text-align:center;transform:rotate(-12deg);box-shadow:0 14px 40px rgba(168,214,91,.4)}
 .badge-round b{font-family:var(--f-display);font-weight:400;font-size:2.6rem;line-height:.9}
 .badge-round span{font-size:.62rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}
 
@@ -283,14 +284,6 @@ input[type=range]:focus-visible{outline:3px solid var(--sun);outline-offset:6px}
 .faq-a p{color:var(--muted);padding-bottom:22px;line-height:1.75}
 
 /* CTA FINAL */
-.cta-final{position:relative;overflow:hidden;padding:120px var(--gutter);text-align:center;background:var(--grad-sun)}
-.cta-final::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(7,42,33,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(7,42,33,.08) 1px,transparent 1px);background-size:44px 44px}
-.cta-final > *{position:relative}
-.cta-final h2{font-size:clamp(3rem,9vw,7.5rem);line-height:.9;color:var(--on-bright)}
-.cta-final h2 span{display:inline-block;color:#FBFBF9;text-shadow:0 6px 0 var(--on-bright);animation:wobble 2.6s ease-in-out infinite}
-.cta-final p{color:var(--on-bright);font-weight:600;font-size:1.1rem;max-width:560px;margin:22px auto 36px}
-.cta-final .btn{background:var(--on-bright);color:var(--sun);animation:none;box-shadow:0 14px 40px rgba(7,42,33,.4)}
-.cta-final .btn::before{background:linear-gradient(90deg,transparent,rgba(221,191,125,.35),transparent)}
 
 footer{padding:44px var(--gutter);background:var(--t-deep);color:var(--muted2);font-size:.82rem;text-align:center;line-height:1.7}
 footer .logo{font-family:var(--f-display);font-size:1.6rem;letter-spacing:2px;color:var(--text);margin-bottom:10px}
@@ -372,7 +365,7 @@ html,body{overflow-x:hidden}
 /* VSL: começa sozinha sem som; um toque liga o som e volta pro início */
 .vsl-som{position:absolute;inset:auto 0 0 0;top:0;display:grid;place-content:center;justify-items:center;gap:6px;border:0;padding:20px;cursor:pointer;color:#FBFBF9;font-family:var(--f-body);
   background:radial-gradient(60% 40% at 50% 50%,rgba(5,33,26,.55),rgba(5,33,26,.15) 70%,transparent)}
-.vsl-som .vsl-ico{width:84px;height:84px;border-radius:50%;background:var(--grad-sun);color:var(--on-bright);display:grid;place-items:center;box-shadow:0 0 0 0 rgba(221,191,125,.6);animation:somPulse 1.6s ease-out infinite}
+.vsl-som .vsl-ico{width:84px;height:84px;border-radius:50%;background:var(--grad-sun);color:var(--on-bright);display:grid;place-items:center;position:relative}
 .vsl-som .vsl-ico svg{width:38px;height:38px}
 .vsl-som b{margin-top:10px;font-size:1rem;font-weight:800;letter-spacing:.5px;text-shadow:0 2px 10px rgba(0,0,0,.6)}
 .vsl-som span:last-child{font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sun);text-shadow:0 2px 10px rgba(0,0,0,.6)}
@@ -424,7 +417,7 @@ html,body{overflow-x:hidden}
 .btn-ghost::before{display:none}
 @media (hover:hover){.btn-ghost:hover{background:rgba(221,191,125,.1);box-shadow:none}}
 .planos-secure{margin-top:18px}
-@media (max-width:768px){.planos{grid-template-columns:minmax(0,1fr);gap:30px}.plano-premium{order:-1}}
+@media (max-width:768px){.planos{grid-template-columns:minmax(0,1fr);gap:30px}}
 /* pop-up de upgrade do Básico para o Premium */
 .up{width:min(460px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;border:2px solid var(--sun);border-radius:26px;padding:38px 28px 26px;background:radial-gradient(circle at 50% 0%,rgba(221,191,125,.22),transparent 55%),var(--night2);color:var(--text);text-align:center;box-shadow:0 40px 120px rgba(0,0,0,.6)}
 .up::backdrop{background:rgba(3,20,15,.78);backdrop-filter:blur(4px)}
@@ -470,6 +463,11 @@ html,body{overflow-x:hidden}
 .up .up-lista .dot svg{width:10px;height:10px}
 .up-box{padding:12px;margin:4px 0 14px}
 .up .up-preco b{font-size:2.6rem}
+/* desempenho: brilho do botão só ao passar o mouse */
+@media (hover:hover){.btn:hover::before{animation:sweep .9s ease-out}}
+/* pulso do botão de som feito com transform (mais leve que animar sombra) */
+.vsl-som .vsl-ico::after{content:"";position:absolute;inset:0;border-radius:50%;border:3px solid rgba(221,191,125,.7);animation:somRing 1.6s ease-out infinite}
+@keyframes somRing{from{transform:scale(1);opacity:1}to{transform:scale(1.5);opacity:0}}
 /* responsivo */
 @media (max-width:900px){
   .pain-grid{grid-template-columns:repeat(2,1fr)}
@@ -516,7 +514,7 @@ html,body{overflow-x:hidden}
         <span class="l3">E a culpa não é sua.</span>
       </h1>
       <div class="hero-video">
-        <video id="vsl" src="vsl-aulas.mp4" poster="vsl-aulas-capa.jpg" autoplay muted playsinline preload="auto" width="540" height="960"></video>
+        <video id="vsl" data-src="vsl-leve.mp4" poster="vsl-leve-capa.jpg" muted playsinline preload="none" width="540" height="960"></video>
         <button type="button" class="vsl-som" id="vslSom" aria-label="Ativar o som do vídeo">
           <span class="vsl-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
           <b>Seu vídeo já começou</b>
@@ -531,8 +529,8 @@ html,body{overflow-x:hidden}
         <figure><img src="antes-depois-3.jpg" srcset="antes-depois-3-600.jpg 420w, antes-depois-3.jpg 820w" sizes="(max-width:860px) 46vw, 410px" decoding="async" alt="Antes e depois de um aluno de frente, com redução visível de gordura abdominal" width="820" height="820" loading="lazy"></figure>
       </div>
       <div class="dep-grid">
-        <figure class="dep"><div class="dep-in"><video src="depoimento-1.mp4" poster="depoimento-1-capa.jpg" controls playsinline preload="none" width="576" height="1024"></video></div></figure>
-        <figure class="dep"><div class="dep-in"><video src="depoimento-2.mp4" poster="depoimento-2-capa.jpg" controls playsinline preload="none" width="576" height="1024"></video></div></figure>
+        <figure class="dep"><div class="dep-in"><video src="depoimento-1.mp4" data-poster="depoimento-1-capa.jpg" controls playsinline preload="none" width="576" height="1024"></video></div></figure>
+        <figure class="dep"><div class="dep-in"><video src="depoimento-2.mp4" data-poster="depoimento-2-capa.jpg" controls playsinline preload="none" width="576" height="1024"></video></div></figure>
       </div>
       <p class="ba-note">Resultados individuais de alunos e mentorados, alcançados ao longo de meses de prática e, em alguns casos, com treino. Não representam o que acontece em 7 dias.</p>
       <!-- CARROSSEL DE MÓDULOS -->
@@ -883,11 +881,14 @@ html,body{overflow-x:hidden}
     const v = document.getElementById('vsl'), b = document.getElementById('vslSom');
     if (!v || !b) return;
     v.muted = true;
-    const tentar = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
-    tentar();
+    const tentar = () => { if (!v.src) return; const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+    // a capa aparece na hora; o vídeo só começa a baixar depois que o resto da página carregou
+    const iniciar = () => { if (!v.src) { v.src = v.dataset.src; v.autoplay = true; tentar(); } };
+    if (document.readyState === 'complete') setTimeout(iniciar, 300); else addEventListener('load', () => setTimeout(iniciar, 300));
     let comSom = false;
     b.addEventListener('click', () => {
       comSom = true;
+      iniciar();
       v.muted = false;
       v.currentTime = 0;
       v.controls = true;
@@ -912,6 +913,14 @@ html,body{overflow-x:hidden}
     });
     document.getElementById('upFechar').addEventListener('click', () => d.close());
     d.addEventListener('click', e => { if (e.target === d) d.close(); });
+  })();
+
+  // capas dos vídeos de depoimento só carregam quando a pessoa chega perto
+  (() => {
+    const vs = document.querySelectorAll('video[data-poster]');
+    if (!('IntersectionObserver' in window)) { vs.forEach(v => v.poster = v.dataset.poster); return; }
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.poster = e.target.dataset.poster; io.unobserve(e.target); } }), { rootMargin: '600px 0px' });
+    vs.forEach(v => io.observe(v));
   })();
 
   // FAQ
