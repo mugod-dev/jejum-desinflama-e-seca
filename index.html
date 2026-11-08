@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://vitorshowreset.com.br/">
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<link rel="preload" as="image" href="vsl-v3-capa.jpg">
+<link rel="preload" as="image" href="vsl-6min-capa.jpg">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -468,6 +468,23 @@ html,body{overflow-x:hidden}
 /* pulso do botão de som feito com transform (mais leve que animar sombra) */
 .vsl-som .vsl-ico::after{content:"";position:absolute;inset:0;border-radius:50%;border:3px solid rgba(221,191,125,.7);animation:somRing 1.6s ease-out infinite}
 @keyframes somRing{from{transform:scale(1);opacity:1}to{transform:scale(1.5);opacity:0}}
+/* vitrine dos bônus, acima das ofertas */
+.bonus-vitrine{max-width:1000px;margin:40px auto 0;text-align:center}
+.bonus-tit{color:var(--muted);font-size:.95rem;margin-bottom:18px}
+.bonus-tit b{color:var(--sun)}
+.bn-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.bn{margin:0;width:calc((100% - 32px)/3);max-width:300px;background:var(--night2);border:1px solid var(--line2);border-radius:18px;overflow:hidden;text-align:left;transition:transform .35s var(--ease-spring),border-color .3s}
+@media (hover:hover){.bn:hover{transform:translateY(-6px);border-color:rgba(221,191,125,.6)}}
+.bn-img{position:relative;aspect-ratio:1/1;background:#0B231B}
+.bn-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+.bn figcaption{padding:12px 14px 14px;font-weight:700;font-size:.9rem;line-height:1.35;color:var(--text)}
+.bn figcaption span{display:block;color:var(--sun);font-size:.7rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px}
+@media (max-width:768px){.bn{width:calc((100% - 16px)/2)}.bn figcaption{font-size:.82rem;padding:10px 12px 12px}}
+/* vitrine dos bônus como carrossel deslizante */
+.bn-scroll{width:100vw;margin:0 calc(50% - 50vw)}
+.bn-scroll .mc-track{padding:12px 24px 18px}
+.bn-scroll .bn{flex:none;width:clamp(190px,22vw,250px);max-width:none}
+.bn-scroll .bn img{pointer-events:none;-webkit-user-drag:none}
 /* responsivo */
 @media (max-width:900px){
   .pain-grid{grid-template-columns:repeat(2,1fr)}
@@ -514,7 +531,7 @@ html,body{overflow-x:hidden}
         <span class="l3">E a culpa não é sua.</span>
       </h1>
       <div class="hero-video">
-        <video id="vsl" data-src="vsl-v3.mp4" poster="vsl-v3-capa.jpg" muted playsinline preload="none" width="540" height="960"></video>
+        <video id="vsl" data-src="vsl-6min.mp4" poster="vsl-6min-capa.jpg" muted playsinline preload="none" width="540" height="960"></video>
         <button type="button" class="vsl-som" id="vslSom" aria-label="Ativar o som do vídeo">
           <span class="vsl-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
           <b>Seu vídeo já começou</b>
@@ -725,6 +742,19 @@ html,body{overflow-x:hidden}
       </div>
     </div>
     <div class="secure planos-secure"><span>🔒 Pagamento seguro</span><span>Pix · Cartão</span><span>Leia no celular</span></div>
+    <div class="bonus-vitrine">
+      <p class="bonus-tit">Alguns dos bônus que vêm no <b>Pacote Premium</b></p>
+      <div class="mc-scroll bn-scroll" id="bnScroll">
+        <div class="mc-track">
+      <figure class="bn mc-bn"><div class="bn-img"><img src="bonus-doces.jpg" alt="20 Doces Ancestrais" width="480" height="600" loading="lazy" decoding="async"></div><figcaption><span>Bônus 3</span>20 Doces Ancestrais</figcaption></figure>
+      <figure class="bn mc-bn"><div class="bn-img"><img src="bonus-rastreador.jpg" alt="Rastreador de 7 dias" width="600" height="600" loading="lazy" decoding="async"></div><figcaption><span>Bônus 4</span>Rastreador de 7 dias</figcaption></figure>
+      <figure class="bn mc-bn"><div class="bn-img"><img src="bonus-quebra.jpg" alt="Guia quebra ou não quebra o jejum?" width="480" height="600" loading="lazy" decoding="async"></div><figcaption><span>Bônus 5</span>Guia quebra ou não quebra o jejum?</figcaption></figure>
+      <figure class="bn mc-bn"><div class="bn-img"><img src="bonus-shots.jpg" alt="5 Shots matinais que não quebram o jejum" width="600" height="600" loading="lazy" decoding="async"></div><figcaption><span>Bônus 7</span>5 Shots matinais que não quebram o jejum</figcaption></figure>
+      <figure class="bn mc-bn"><div class="bn-img"><img src="bonus-fora-de-casa.jpg" alt="Guia Jejum fora de casa" width="600" height="400" loading="lazy" decoding="async"></div><figcaption><span>Bônus 8</span>Guia Jejum fora de casa</figcaption></figure>
+        </div>
+      </div>
+      <p class="mc-hint">Arraste para o lado para ver todos</p>
+    </div>
 
     <div class="guar">
       <div class="seal"><b>7</b><span>dias de<br>garantia</span></div>
@@ -846,11 +876,9 @@ html,body{overflow-x:hidden}
   tick(); setInterval(tick, 1000);
 
   // carrossel de módulos: passa sozinho, pausa no toque/mouse e pode ser arrastado
-  (() => {
-    const sc = document.getElementById('mcScroll');
-    if (!sc) return;
+  document.querySelectorAll('.mc-scroll').forEach(sc => {
     const track = sc.firstElementChild;
-    [...track.children].forEach(c => { const d = c.cloneNode(true); d.setAttribute('aria-hidden', 'true'); d.querySelector('img').alt = ''; track.appendChild(d); });
+    [...track.children].forEach(c => { const d = c.cloneNode(true); d.setAttribute('aria-hidden', 'true'); const im = d.querySelector('img'); if (im) { im.alt = ''; im.loading = 'eager'; } track.appendChild(d); });
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
     let pos = 0, last = performance.now(), hold = false, onScreen = true, resumeAt = 0;
     const half = () => track.scrollWidth / 2;
@@ -875,7 +903,7 @@ html,body{overflow-x:hidden}
     sc.addEventListener('mousedown', e => { dragging = true; startX = e.clientX; startLeft = sc.scrollLeft; sc.classList.add('drag'); e.preventDefault(); });
     addEventListener('mousemove', e => { if (dragging) sc.scrollLeft = startLeft - (e.clientX - startX); });
     addEventListener('mouseup', () => { if (dragging) { dragging = false; sc.classList.remove('drag'); pause(1500); } });
-  })();
+  });
 
   // VSL: autoplay sem som (regra dos navegadores) + toque para ouvir desde o início
   (() => {
